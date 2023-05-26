@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DAL\" />
+    <None Remove="Models\" />
+    <None Remove="BL\" />
+    <None Remove="Hepler\" />
+    <None Remove="ViewModel\" />
+    <None Remove="Controllers\" />
+    <None Remove="Generator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="Models\" />
+    <Folder Include="BL\" />
+    <Folder Include="Hepler\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Generator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Faker" Version="1.2.0" />
+    <PackageReference Include="Faker.Net" Version="2.0.154" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,50 @@
+﻿<Properties StartupConfiguration="{CE3281DE-2FA4-4E7B-925F-6710FE00B29B}|Default">
+  <MonoDevelop.Ide.ItemProperties.PTMKTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PTMKTest/Controllers/ConsoleController.cs">
+    <Files>
+      <File FileName="PTMKTest/Program.cs" Line="15" Column="1" />
+      <File FileName="PTMKTest/DAL/IdentityDb.cs" />
+      <File FileName="PTMKTest/Hepler/DbHelper.cs" />
+      <File FileName="PTMKTest/DAL/IIdentityDb.cs" />
+      <File FileName="PTMKTest/Models/UserModel.cs" />
+      <File FileName="PTMKTest/BL/IIdentityUser.cs" Line="12" Column="63" />
+      <File FileName="PTMKTest/ViewModel/UserConsoleViewModel.cs" />
+      <File FileName="PTMKTest/BL/IdentityUser.cs" Line="42" Column="11" />
+      <File FileName="PTMKTest/Generator/IUserGenerator.cs" />
+      <File FileName="PTMKTest/Generator/UserGenerator.cs" Line="26" Column="31" />
+      <File FileName="PTMKTest/Hepler/UserViewAndUserModelMapper.cs" />
+      <File FileName="PTMKTest/Controllers/ConsoleController.cs" Line="38" Column="58" />
+      <File FileName="PTMKTest/PTMKTest.csproj" />
+      <File FileName="PTMKTest/Controllers/Controller.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PTMKTest" expanded="True">
+            <Node name="PTMKTest" expanded="True">
+              <Node name="BL" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ConsoleController.cs" selected="True" />
+              </Node>
+              <Node name="DAL" expanded="True" />
+              <Node name="Generator" expanded="True" />
+              <Node name="Hepler" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/syrup/Projects/PTMKTest/PTMKTest/Program.cs" relfile="PTMKTest/Program.cs" line="14" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
