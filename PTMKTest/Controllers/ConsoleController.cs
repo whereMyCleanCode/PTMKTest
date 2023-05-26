@@ -13,7 +13,7 @@ namespace PTMKTest.Controllers
 
         public void EntyMethood()
         {
-            Console.WriteLine("Выберите действие\n1.Создать пользователя\n2.Посмотреть пользователяn\n3.Сгенерировать пользователя");
+            Console.WriteLine("Make a choise\n1.Create user \n2.Check user\n3.Generate user");
             ChooseAnalzer(Convert.ToInt32(Console.ReadLine() ?? "0"));
         }
 
@@ -26,34 +26,34 @@ namespace PTMKTest.Controllers
                     break;
                     
                 case 1:
-                    Console.WriteLine("Введите имя пользователя");
+                    Console.WriteLine("Input user name");
                     _userModel.FirstName = Console.ReadLine() ?? "";
-                    Console.WriteLine("Введите фамилию пользователя");
+                    Console.WriteLine("Input user second name");
                     _userModel.SecondName = Console.ReadLine() ?? "";
-                    Console.WriteLine("Введите отчество пользователя");
+                    Console.WriteLine("Input user father name");
                     _userModel.FatherName = Console.ReadLine() ?? "";
-                    Console.WriteLine("Введите пол пользователя");
+                    Console.WriteLine("Input user gender");
                     _userModel.Gender = Console.ReadLine() ?? "";
-                    Console.WriteLine("Введите дату рождения пользователя Пример(Год.Месяц.Число)");
+                    Console.WriteLine("Input bithday user  Example(Years.Month.Day)");
                     string bithday = Console.ReadLine() ?? "0000.00.00";
                     _userModel.Birthday = DateTime.Parse(bithday);
                     if (_userModel != null) ///activated model mapper
                         if (await _identityUser.AddUser(PTMKTest.Hepler.UserViewAndUserModelMapper.ReturnUserModelMapper(_userModel)) == 0)//Activate user creator methood
-                            Console.WriteLine("Такой пользователь уже существует");
+                            Console.WriteLine("this user exist");
                         else
-                            Console.WriteLine("пользователь создан");
+                            Console.WriteLine("User Created!");
                     break;
 
                 case 2:
-                    Console.WriteLine("Выберите действие\n1.Выбрать всех уникальных пользователей\n2Выбрать всех уникальных пользователей начинающихся с буквы F");
+                    Console.WriteLine("Make a choice\n1.Select all uniq user\n2Select all uniq user get startet with F");
                     switch(Convert.ToInt32(Console.ReadLine()))
                     {
                         case 1:
                           List<UserModel> users = await _identityUser.SearchUniqUser();
                             foreach (UserModel model in users)
                             {
-                                Console.WriteLine("Firstname" + " " + model.FirstName);
-                                Console.WriteLine("Firstname" + " " + model.SecondName);
+                                Console.WriteLine(@"Firstname {model.Firstname} ");
+                                Console.WriteLine("Firstname" + " " + model.SecondName + "\n");
                                 Console.WriteLine("Firstname" + " " + model.FatherName);
                                 Console.WriteLine("Firstname" + " " + model.Gender);
                                 Console.WriteLine("Birthday" + " " + Convert.ToString(model.Birthday ?? new DateTime()));
@@ -79,8 +79,8 @@ namespace PTMKTest.Controllers
                 case 3:
                    List<int> userId = await _identityUser.GenerateUserDb();//Activate user generator methood
 
-                    ///if (userId.Count > 0)
-                        Console.WriteLine("пользователи сгенерированы");
+                    ///if (userId.Count > 0)///
+                        Console.WriteLine("User generated");
                         Console.ReadKey();
                     break;
             }

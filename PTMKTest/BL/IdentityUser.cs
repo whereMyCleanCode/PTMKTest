@@ -2,14 +2,18 @@
 using PTMKTest.DAL;
 using PTMKTest.Generator;
 using PTMKTest.Models;
+using BenchmarkDotNet.Attributes;
 
 namespace PTMKTest.BL
 {
-	public class IdentityUser : IIdentityUser
+    [MemoryDiagnoser]
+    [RankColumn]
+    public class IdentityUser : IIdentityUser
 	{
         private IIdentityDb _identityDb = new IdentityDb();
         private IUserGenerator _userGenerator = new UserGenerator();
 
+        [Benchmark]
         public async Task<int> AddUser(UserModel model)
         {
             if(model != null)
@@ -23,18 +27,18 @@ namespace PTMKTest.BL
             }
             return 0;
         }
-
+        [Benchmark]
         public async Task<List<UserModel>> SearchUniqUser()///maybee read methood with add hock polimorphizm using serapate UserModel property
         {
             return await _identityDb.GetUniqUsers();
         }
-
+        [Benchmark]
         public async Task<List<UserModel>>SearchUniqUser(string fathername)
         {
             return await _identityDb.GetUniqUsers(fathername);
         }
 
-
+        [Benchmark]
         public async Task<List<int>> GenerateUserDb()
         {
           List<int> usersid = new List<int>();
